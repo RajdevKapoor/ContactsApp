@@ -17,10 +17,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         DatabaseHandler db= new DatabaseHandler(this);
+
         List<Contact> contactList=db.getAllContacts();
         for(Contact contact: contactList){
-            Log.d("Mainactivity",contact.getName()+" "+contact.getPhoneNumber());
+            Log.d("Mainactivity",contact.getName()+" "+contact.getPhoneNumber()+" "+contact.getId());
         }
+
 
     }
 }

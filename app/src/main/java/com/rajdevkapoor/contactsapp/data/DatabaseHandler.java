@@ -108,5 +108,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(counQuery,null);
         return cursor.getCount();
     }
+    public void deleteAll()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String truncateTable= "TRUNCATE TABLE " + TABLE_NAME;
+        db.execSQL(truncateTable);
+        db.close();
+    }
 
 }
